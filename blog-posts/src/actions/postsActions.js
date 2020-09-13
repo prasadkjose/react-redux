@@ -5,6 +5,7 @@ export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
 export const GET_POSTS_FAILURE = "GET_POSTS_FAILURE";
 
 //Action Creaters : Functions that return redux actions
+//these acton creates can be called(dispatched) from middleware functions Thunk or Saga
 export const getPosts = () => ({
   type: GET_POSTS,
 });
@@ -18,10 +19,11 @@ export const getPostsFailure = () => ({
   type: GET_POSTS_FAILURE,
 });
 
-//Async Thunk
+//Async Thunk4
+//This should in Saga.js
 export function fetchPosts() {
   return async (dispatch) => {
-    //Asynv function closure
+    //Async function closure
     dispatch(getPosts());
 
     try {

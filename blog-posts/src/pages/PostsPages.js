@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 
 import { fetchPosts } from "../actions/postsActions";
 import { Post } from "../components/Post";
+import { getPosts } from "../actions/postsActions";
 
 const PostsPages = ({ dispatch, loading, posts, hasErrors }) => {
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch(getPosts());
   }, [dispatch]);
 
   // Show loading, error, or success state

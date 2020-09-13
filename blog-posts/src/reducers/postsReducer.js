@@ -1,6 +1,7 @@
 //Import Actions
-import * as actions from "../actions/postsActions";
-
+export const GET_POSTS_ASYNC = "GET_POSTS_ASYNC";
+export const GET_POSTS_SUCCESS_ASYNC = "GET_POSTS_SUCCESS_ASYNC";
+export const GET_POSTS_FAILURE_ASYNC = "GET_POSTS_FAILURE_ASYNC";
 // reducer for 'posts' State
 export const initialState = {
   posts: [],
@@ -10,11 +11,11 @@ export const initialState = {
 
 export default function postsReducer(state = initialState, action) {
   switch (action.type) {
-    case actions.GET_POSTS:
+    case GET_POSTS_ASYNC:
       return { ...state, loading: true };
-    case actions.GET_POSTS_SUCCESS:
+    case GET_POSTS_SUCCESS_ASYNC:
       return { posts: action.payload, loading: false, hasError: false };
-    case actions.GET_POSTS_FAILURE:
+    case GET_POSTS_FAILURE_ASYNC:
       return { ...state, loading: false, hasError: true };
     default:
       return state;
