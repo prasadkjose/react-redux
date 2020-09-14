@@ -27,9 +27,11 @@ function* api() {
     let data = {};
     let response = {};
     yield put(getPostsSaga());
+    // With JS fetch() API
     // response = yield fetch("https://jsonplaceholder.typicode.com/posts");
     // data = yield response.json();
 
+    // With JS axios
     data = yield API.get("/");
 
     yield put(getPostsSuccessSaga(data.data));

@@ -9,8 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { fetchPostsWatcher } from "./sagas/saga";
 // Local imports
 import App from "./App";
-import rootReducer from "./reducers";
-
+import rootReducer from "./reducers/index";
 import "./index.css";
 
 const sagaMiddleware = createSagaMiddleware();
